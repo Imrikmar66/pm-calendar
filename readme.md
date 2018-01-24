@@ -1,6 +1,6 @@
 
 # PM-CALENDAR
-Il s'agit d'un module modifiable a inclure directement dans src/app : 
+Il s'agit d'un module modifiable à inclure directement dans src/app : 
 
 ## Installation
 - npm install pm-calendar
@@ -32,9 +32,9 @@ Le modèle du composant est le suivant :
 <app-calendar [datestart]="datestart" [dateend]="dateend" ></app-calendar>
 ```
 #### Paramètres : 
-- datestart : La date du premier mois à afficher
-- dateend : La date du dernier mois à afficher
-- lang (Optionnel) : La langue du calendrier à afficher ( Par default: "fr" )
+- datestart: Date - La date du premier mois à afficher
+- dateend: Date - La date du dernier mois à afficher
+- lang: string (Optionnel) - La langue du calendrier à afficher ( Par default: "fr" )
 
 ##### Langues : 
 La liste des langue est disponible et modifiable dans ./class/CalendarLangs.ts ainsi que la langue par default ( DEFAULT_LANG )
@@ -49,7 +49,7 @@ constructor( private calendarService: CalendarService ){ //...
 ```
 #### Evénements disponibles : 
 
-- onDateSelected() : 
+- onDateSelected(): void
 ```typescript
 import { CalendarService } from './pm-calendar/services/calendar.service';
 import { DayCalendar } from './pm-calendar/class/DayCalendar';
