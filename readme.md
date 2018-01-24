@@ -1,3 +1,4 @@
+
 # PM-CALENDAR
 Il s'agit d'un module modifiable a inclure directement dans src/app : 
 
@@ -93,7 +94,7 @@ Tout les styles sont modifiable :
 
 - ./calendar/component.calendar.css
 - ./calendar/component.week.css
-- ./calendar/component.calendar.css
+- ./calendar/component.day.css //Contient le css des classes utilisées avec day.addClass / day.removeCass ...ect.
 
 Attention cependant certains css ont été pensé pour garder l'aspect "tableau" du calendrier : 
 ```css
