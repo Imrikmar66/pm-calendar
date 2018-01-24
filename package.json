@@ -1,0 +1,23 @@
+{
+  "name": "pm-calendar",
+  "version": "1.0.0",
+  "description": "A Calendar for angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Imrikmar66/pm-calendar.git"
+  },
+  "keywords": [
+    "angular",
+    "calendar"
+  ],
+  "author": "Pierre MAR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Imrikmar66/pm-calendar/issues"
+  },
+  "homepage": "https://github.com/Imrikmar66/pm-calendar#readme"
+}

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import * as moment from 'moment';
 import { DatesCalendar } from '../class/DatesCalendar';
 import { DATE_LANGS, DEFAULT_LANG } from '../class/CalendarLangs';
 
