@@ -1,11 +1,11 @@
 
 # PM-CALENDAR
-Il s'agit d'un module modifiable à inclure directement dans src/app : 
+This is an editable module to include directly in src/app : 
 
 ## Installation
 - npm install pm-calendar
-- Déplacer le dossier ./nodes_modules/pm-calendar dans ./src/app
-- Charger PmCalendarModule dans les imports de app.module.ts : 
+- Moove the folder ./nodes_modules/pm-calendar to ./src/app
+- Import PmCalendarModule in app.module.ts : 
 ```typescript
 import { PmCalendarModule } from './pm-calendar/pm-calendar.module';
 //...
@@ -23,31 +23,31 @@ import { PmCalendarModule } from './pm-calendar/pm-calendar.module';
 })
 ```
 
-## Utilisation
+## Usage
 
 ### Template html
 
-Le modèle du composant est le suivant : 
+The component model is : 
 ```html
 <app-calendar [datestart]="datestart" [dateend]="dateend" ></app-calendar>
 ```
 #### Paramètres : 
-- datestart: Date - La date du premier mois à afficher
-- dateend: Date - La date du dernier mois à afficher
-- lang: string (Optionnel) - La langue du calendrier à afficher ( Par default: "fr" )
+- datestart: Date - First month's date to display
+- dateend: Date - Last month's date to display
+- lang: string (Optionnal) - The calendar lang to display ( Default: "fr" )
 
-##### Langues : 
-La liste des langue est disponible et modifiable dans ./class/CalendarLangs.ts ainsi que la langue par default ( DEFAULT_LANG )
+##### Languages : 
+Language list is available and editable in ./class/CalendarLang.ts as the default lang ( DEFAULT_LANG )
 
 ### Component ts
-On peut utiliser le service CalendarService pour accéder aux événements relatif au calendrier :
+You can use the CalendarService to access calendar's events :
 ```typescript
 import { CalendarService } from './pm-calendar/services/calendar.service';
 //...
 //...
 constructor( private calendarService: CalendarService ){ //...
 ```
-#### Evénements disponibles : 
+#### Available event : 
 
 - onDateSelected(): void
 ```typescript
@@ -61,7 +61,7 @@ constructor( private calendarService: CalendarService ){
 	});
 }
 ```
-La classe retournée ( DayCalendar ) possède les méthodes suivantes : 
+The returned class ( DayCalendar ) has the current method : 
 
 - getClasses(): string[]
 - setClasses( classes: string[] ): void
@@ -70,15 +70,15 @@ La classe retournée ( DayCalendar ) possède les méthodes suivantes :
 - getObjDate(): Date
 - getWeekNumber(): number
 ```typescript
-day.addClass("test"); //Ajoute la classe test à la case de la date
-day.removeClass("test"); //Retire la classe test de la case de la date
-day.getObjDate(); //Renvoie l'objet Date correspondant
-day.getWeekNumber(); //Renvoie l'index de la semaine correspondant à ce jour dans le mois
-day.getClasses(); //Renvoie la liste des classes présente sur la case
-day.setClasses(["test", "disabled"]); //Définit la liste des classes de la case
+day.addClass("test"); //Add the 'test' class to the day's div
+day.removeClass("test"); //Remove the 'test' class to the day's div
+day.getObjDate(); //Return corresponding Date object
+day.getWeekNumber(); //Return day's week current index in the month
+day.getClasses(); //Return the class'list of day's div
+day.setClasses(["test", "disabled"]); //Set the class list through an array
 ```
-#### Quitter le composant 
-Retirer les événements liés au service : 
+#### Leave the component 
+Remove the linked events 
 ```typescript
 export class AppComponent implements OnDestroy {
 //...
@@ -90,15 +90,15 @@ ngOnDestroy(){
 
 ## Styles
 
-Tout les styles sont modifiable :
+All styles are editables :
 
 - ./calendar/component.calendar.css
 - ./calendar/component.week.css
-- ./calendar/component.day.css //Contient le css des classes utilisées avec day.addClass / day.removeCass ...ect.
+- ./calendar/component.day.css // File for style the class managed via day.addClass / day.removeCass ...ect.
 
-Attention cependant certains css ont été pensé pour garder l'aspect "tableau" du calendrier : 
+Care, much css styles are here for the calendar's table aspect :
 ```css
-/* Aspect 'tableau' du calendrier */
+/* calendar's "table" aspect */
 .dhead {
     display: flex;
 }
