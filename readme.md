@@ -6,6 +6,9 @@ Il s'agit d'un module modifiable a inclure directement dans src/app :
 - Déplacer le dossier ./nodes_modules/pm-calendar dans ./src/app
 - Charger PmCalendarModule dans les imports de app.module.ts : 
 ```typescript
+import { PmCalendarModule } from './pm-calendar/pm-calendar.module';
+//...
+//...
 @NgModule({
   declarations: [
     AppComponent
