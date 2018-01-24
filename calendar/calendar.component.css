@@ -1,0 +1,12 @@
+.dtable {
+
+}
+.dhead {
+    display: flex;
+}
+.dhcol {
+    width: 100px;
+}
+.drow {
+    display: flex;
+}

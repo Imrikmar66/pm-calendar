@@ -1,0 +1,6 @@
+<app-day 
+    class='dcol'
+    *ngFor="let day of week.getDays()"
+    [class.disabled]="day.getObjDate().getMonth() != week.getMonthNumber()"
+    [day]="day"
+></app-day>

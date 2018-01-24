@@ -1,0 +1,6 @@
+.dcol {
+    width: 100px;
+}
+.dcol.disabled {
+    background-color: grey;
+}

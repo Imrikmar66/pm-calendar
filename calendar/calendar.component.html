@@ -1,0 +1,17 @@
+<h2> Now : {{ now }} </h2>
+
+<div *ngFor="let month of displayed_months.getMonths()" class='months'>
+    <h4> {{ month.getFullMonth() }} {{ month.getYear() }} </h4>
+    <div class='dtable'>
+        <div class='dhead'>
+            <div class='dhcol' *ngFor="let str_day of str_days">
+                {{ str_day }}
+            </div>
+        </div>
+        <app-week
+            class="drow"
+            *ngFor="let week of month.getWeeks()"
+            [week]="week"
+        ></app-week>
+    </div>
+</div>
