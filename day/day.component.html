@@ -1,3 +1,4 @@
+<!-- click action is important for the onDateSelected event trigger. Don't remove it -->
 <div (click)="dayClicked(day)" [ngClass]="day.getClasses()">
     {{ day.getObjDate().toLocaleDateString() }}
 </div>
