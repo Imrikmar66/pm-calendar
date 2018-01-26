@@ -14,7 +14,7 @@ export class DayComponent {
     constructor( private calendarService:CalendarService ){}
     
     dayClicked(day: DayCalendar){
-        this.calendarService.triggerDaySelect( day );
+        this.calendarService.triggerDaySelect( day, this );
     }
 
 }
