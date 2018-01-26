@@ -31,7 +31,7 @@ The component model is :
 ```html
 <app-calendar [datestart]="datestart" [dateend]="dateend" ></app-calendar>
 ```
-#### Paramètres : 
+#### Parameters : 
 - datestart: Date - First month's date to display
 - dateend: Date - Last month's date to display
 - lang: string (Optionnal) - The calendar lang to display ( Default: "fr" )
@@ -49,16 +49,41 @@ constructor( private calendarService: CalendarService ){ //...
 ```
 #### Available event : 
 
-- onDateSelected(): void
+- onDateSelected( method: Function ): void
+- onCalendarReady( method: Function ): void
+
+#### Available method : 
+- getDay( date: Date, disabled?: boolean ): DayCalendar
+- getDaysInInterval( datestart: Date, dateend: Date ): DayCalendar[]
 ```typescript
 import { CalendarService } from './pm-calendar/services/calendar.service';
 import { DayCalendar } from './pm-calendar/class/DayCalendar';
 //...
 //...
 constructor( private calendarService: CalendarService ){
+
 	this.calendarService.onDateSelected( ( day: DayCalendar ) => {
 	    console.log( day );
-	});
+    });
+    
+    this.calendarService.onCalendarReady( () => {
+
+        //get the day corresponding to the searchedDate and add class test to it
+        let day: DayCalendar | false = this.calendarService.getDay( new Date(2017, 9, 30) );
+        if( day ){
+            ( day as DayCalendar ).addClass("test");
+        }
+
+         //get the days corresponding to the interval and add class test to them
+         let start: Date = new Date(2017, 4, 30);
+         let end: Date = new Date( 2017, 5, 2 );
+         let searchs: DayCalendar[] = this.calendarService.getDaysInInterval( start, end );
+         for( let search of searchs ){
+                if( search.getWeekNumber() > -1 ){
+                    search.addClass("test");
+                }
+         }
+    } )
 }
 ```
 The returned class ( DayCalendar ) has the current method : 

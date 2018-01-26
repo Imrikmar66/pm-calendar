@@ -25,7 +25,8 @@ export class Calendar {
 
         while( counter < 7 ){
             let calc_date: Date = new Date( the_day.getTime() );
-            let dayCalendar = new DayCalendar(counter, calc_date);
+            let true_week = ( calc_date.getMonth() == month ) ? week : -1;
+            let dayCalendar = new DayCalendar(true_week, calc_date);
             week_days.push( dayCalendar );
             the_day.setDate( the_day.getDate() + 1 );
             counter++;

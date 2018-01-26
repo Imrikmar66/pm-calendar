@@ -19,6 +19,8 @@ export class DatesCalendar {
             for( let weeks of month.getWeeks()){
                 for( let days of weeks.getDays() ){
 
+                    if( days.getWeekNumber() === -1 ) continue;
+
                     let formated_arg_date: Date = new Date(arg_date.getFullYear(), arg_date.getMonth(), arg_date.getDate());
                     let day: Date = days.getObjDate();
                     let formated_day: Date = new Date( day.getUTCFullYear(), day.getMonth(), day.getDate() );
@@ -41,7 +43,7 @@ export class DatesCalendar {
                     let formated_dateend: Date = new Date(dateend.getFullYear(), dateend.getMonth(), dateend.getDate())
                     let day: Date = days.getObjDate();
                     let formated_day: Date = new Date( day.getUTCFullYear(), day.getMonth(), day.getDate() );
-                    if( formated_day.getTime() >= datestart.getTime() && formated_day.getTime() <= dateend.getTime() ){
+                    if( formated_day.getTime() >= formated_datestart.getTime() && formated_day.getTime() <= formated_dateend.getTime() ){
                         found_days.push( days );
                     }
                 }
